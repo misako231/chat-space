@@ -41,22 +41,23 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_many :messages
-- belongs_to :member
+- has_many :members
+- has_many :users, through: :members
 
 ## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|group_id|integer|null: false, foreign_key: true|
+|email|string|null: false, unique: true|
 
 ### Assosiation
 - has_many :messages
-- belongs_to :member
+- has_many :members
+- has_many :groups, through: :members
 
 ## membersテーブル
 
