@@ -1,13 +1,29 @@
-!!!
-%html{lang: "ja"}
-  %head
-    %meta{charset: "utf-8"}
-    %title ReviewSpace
-  %body
-    .side-bar
-      .user
-      .group
-    .main
-      .group
-      .message
-      .main-footer
+.information
+  %p お知らせ
+.side
+  .side__user
+    %p.side__user--name ユーザー名
+    =link_to do
+      %i.fa.fa-edit.fa-lg
+    =link_to do
+      %i.fa.fa-cog.fa-lg
+  .side__group
+    %p.side__group--name グループ名
+    %p.side__group--message 最新のメッセージ
+.main
+  .main__group.clearfix
+    %p.main__group--name グループ名
+    %button.main__group--edit Edit
+    %p.main__group--member MEMBER:
+  .main__message
+    %p.main__message--user 名前
+    %p.main__message--date 日付
+    %p.main__message--text メッセージ
+  .main__footer
+    %form.main__footer-form
+      .main__footer-body
+        %input.message{type: "text",name: "message",placeholder: "type a message"}
+        %label.uploard-label{for: "upload-icon"}
+          %i.fa.fa-image
+        %input#upload-icon{type: "file", name: "image"}
+      %input.submit{type: "submit", value: "send"}
