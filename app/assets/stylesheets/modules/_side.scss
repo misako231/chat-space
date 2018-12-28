@@ -1,0 +1,50 @@
+.side {
+    box-sizing: border-box;
+    background-color: #2f3e51;
+    color: #FFFFFF;
+    width: 300px;
+    height: 100vh;
+    float: left;
+  &__user {
+      background-color: #253141;
+      height: 82px;
+      width: 300px;
+      font-size: 16px;
+      display: inline-block;
+      position: relative;
+    &--name {
+        padding: 30px 20px 0px;
+        font-weight: bold;
+        display: inline-block;
+      }
+    &--lists {
+      width: 50px;
+      position: absolute;
+      top: 35%;
+      right: 20px;
+      .list {
+              display: inline-block;
+              width: 20px;
+        .fa {
+            display: inline-block;
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            color: #FFFFFF;
+        }
+      }
+    }
+
+  }
+  &__groups {
+      height: calc(100vh - 82px);
+      padding: 20px 20px 40px;
+  }
+    .group--name {
+        font-size: 15px;
+      }
+    .group--message {
+        font-size: 11px;
+        padding-top: 5px;
+    }
+}

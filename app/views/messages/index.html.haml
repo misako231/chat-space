@@ -1,15 +1,6 @@
 .information
   %p お知らせ
-.side
-  .side__user
-    %p.side__user--name ユーザー名
-    =link_to do
-      %i.fa.fa-edit.fa-lg
-    =link_to do
-      %i.fa.fa-cog.fa-lg
-  .side__group
-    %p.side__group--name グループ名
-    %p.side__group--message 最新のメッセージ
+= render "side"
 .main
   .main__group.clearfix
     %p.main__group--name グループ名
