@@ -1,9 +1,8 @@
 @import "./configs/reset";
+@import "./configs/colors";
 @import "./modules/index";
-<<<<<<< HEAD
-@import "./modules/user";
-=======
 @import "./modules/side";
->>>>>>> master
+@import "./modules/user";
+@import "./modules/flash";
 @import "font-awesome";
 
