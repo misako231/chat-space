@@ -14,48 +14,6 @@ html, body {
   }
 }
 
-.side {
-    box-sizing: border-box;
-    background-color: #2f3e51;
-    color: #FFFFFF;
-    width: 300px;
-    height: 100vh;
-    float: left;
-  &__user {
-      background-color: #253141;
-      height: 82px;
-      width: 300px;
-      font-size: 16px;
-      display: inline-block;
-    &--name {
-        padding: 30px 20px 0px;
-        font-weight: bold;
-        display: inline-block;
-      }
-    .fa {
-        display: inline-block;
-        font-family: FontAwesome;
-        font-style: normal;
-        font-weight: normal;
-        color: #FFFFFF;
-        }
-    .fa-edit {
-        margin-left: 50px;
-    }
-  }
-  &__group {
-      height: calc(100vh - 82px);
-      padding: 20px 20px 40px;
-    &--name {
-        font-size: 15px;
-      }
-    &--message {
-        font-size: 11px;
-        padding-top: 5px;
-    }
-  }
-}
-
 .main {
     box-sizing: border-box;
     width: calc(100vw - 300px);
