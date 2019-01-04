@@ -29,14 +29,14 @@ html, body {
     }
     &--member {
         font-size: 12px;
-        color: #999999;
+        color: $light_gray;
     }
   }
   &__message {
       box-sizing: border-box;
       padding: 46px 40px 40px;
       height: calc(100vh - 113px - 90px);
-      color: #434A54;
+      color: $black;
       overflow: scroll;
     &--user {
         font-size: 16px;
@@ -46,7 +46,7 @@ html, body {
     }
     &--date {
         font-size: 12px;
-        color: #999999;
+        color: $light_gray;
         display: inline-block;
     }
     &--text {
@@ -72,7 +72,7 @@ html, body {
             padding: 0px 10px;
             height: 50px;
             font-size: 16px;
-            color: #434A54;
+            color: $black;
         }
         label {
             box-sizing: border-box;
@@ -96,8 +96,8 @@ html, body {
       }
       .submit {
           box-sizing: border-box;
-          background-color: #38AEF0;
-          color: #FFF;
+          background-color: $light_blue;
+          color: $white;
           height: 50px;
           width: 100px;
           padding: 0px 20px;
