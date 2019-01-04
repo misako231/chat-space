@@ -1,23 +1,23 @@
 .side {
     box-sizing: border-box;
-    background-color: #2f3e51;
-    color: #FFFFFF;
+    background-color: $side_blue-light;
+    color: $white;
     width: 300px;
     height: 100vh;
     float: left;
-  &__user {
-      background-color: #253141;
-      height: 82px;
+  .user {
+      background-color: $side_blue-dark;
+      height: 100px;
       width: 300px;
       font-size: 16px;
       display: inline-block;
       position: relative;
-    &--name {
-        padding: 30px 20px 0px;
+    &__name {
+        padding: 35px 20px 0px;
         font-weight: bold;
         display: inline-block;
       }
-    &--lists {
+    &__lists {
       width: 50px;
       position: absolute;
       top: 35%;
@@ -30,21 +30,34 @@
             font-family: FontAwesome;
             font-style: normal;
             font-weight: normal;
-            color: #FFFFFF;
+            color: $white;
         }
       }
     }
 
   }
-  &__groups {
-      height: calc(100vh - 82px);
-      padding: 20px 20px 40px;
-  }
-    .group--name {
+  .groups {
+      height: calc(100vh - 100px);
+      padding: 0 20px;
+    .group {
+      box-sizing: border-box;
+      padding: 20px 0 40px;
+      height: 82px;
+    .group:hover {
+      opacity: 0.5;
+      cursor: pointer;
+    }
+      &__name {
         font-size: 15px;
+        color: $white;
+        text-decoration: none;
       }
-    .group--message {
+      &__message {
+        color: $white;
         font-size: 11px;
         padding-top: 5px;
+        text-decoration: none;
+      }
     }
+  }
 }
