@@ -1,18 +1,21 @@
 = render 'shared/side'
 .main
   .main__group.clearfix
-    %p.main__group--name グループ名
+    .main__group--name
+      = @group.name
     %button.main__group--edit Edit
-    %p.main__group--member MEMBER:
-  .main__message
-    %p.main__message--user 名前
-    %p.main__message--date 日付
-    %p.main__message--text メッセージ
+    .main__group--member
+      MEMBERS:
+      - @group.users.each do |user|
+        = user.name
+  .main__messages
+    = render @messages
   .main__footer
-    %form.main__footer-form
+    .main__footer-form
       .main__footer-body
-        %input.message{type: "text",name: "message",placeholder: "type a message"}
-        %label.uploard-label{for: "upload-icon"}
-          %i.fa.fa-image
-        %input#upload-icon{type: "file", name: "image"}
-      %input.submit{type: "submit", value: "send"}
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'message',placeholder: 'type a message'
+          = f.label :image, class: 'upload-label' do
+            = fa_icon 'image', class: 'fa'
+            = f.file_field :image, class: 'upload-icon'
+          = f.submit 'Send', class: 'submit'

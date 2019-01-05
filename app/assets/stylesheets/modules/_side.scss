@@ -40,23 +40,18 @@
       height: calc(100vh - 100px);
       padding: 0 20px;
     .group {
-      box-sizing: border-box;
-      padding: 20px 0 40px;
-      height: 82px;
-    .group:hover {
-      opacity: 0.5;
-      cursor: pointer;
-    }
-      &__name {
-        font-size: 15px;
-        color: $white;
+        box-sizing: border-box;
+        padding: 20px 0 40px;
+        height: 82px;
         text-decoration: none;
+      &__name {
+          font-size: 15px;
+          color: $white;
       }
       &__message {
-        color: $white;
-        font-size: 11px;
-        padding-top: 5px;
-        text-decoration: none;
+          color: $white;
+          font-size: 11px;
+          padding-top: 5px;
       }
     }
   }
