@@ -1,15 +1,17 @@
 = render 'shared/side'
 .main
   .main__group.clearfix
-    %p.main__group--name グループ名
+    .main__group--name
+      = @group.name
     %button.main__group--edit Edit
-    %p.main__group--member MEMBER:
-  .main__message
-    %p.main__message--user 名前
-    %p.main__message--date 日付
-    %p.main__message--text メッセージ
+    .main__group--member
+      MEMBERS:
+      - @group.users.each do |user|
+        = user.name
+  .main__messages
+    = render @messages
   .main__footer
-    %form.main__footer-form
+    .main__footer-form
       .main__footer-body
         = form_for [@group, @message] do |f|
           = f.text_field :content, class: 'message',placeholder: 'type a message'
