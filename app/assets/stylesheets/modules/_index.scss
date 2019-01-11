@@ -35,7 +35,7 @@ html, body {
   &__messages {
       box-sizing: border-box;
       padding: 46px 40px 0px;
-      height: calc(100vh - 113px - 90px);
+      height: calc(100vh - 100px - 90px);
       color: $black;
       overflow: scroll;
     .message {
@@ -73,7 +73,7 @@ html, body {
       .main__footer-body {
           box-sizing: border-box;
           position: relative;
-        .message {
+        .message-box {
             box-sizing: border-box;
             width: calc(100% - 130px);
             padding: 0px 10px;
@@ -101,7 +101,7 @@ html, body {
           }
         }
       }
-      .submit {
+      .send {
           box-sizing: border-box;
           background-color: $light_blue;
           color: $white;
