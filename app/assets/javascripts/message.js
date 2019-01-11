@@ -40,10 +40,9 @@ $(function() {
     .done(function(data) {
       var html = buildHTML(data);
       $('.main__messages').append(html);
-      $('.message-box').val('');
-      // テキストフィールドをからにする
       $('.main__messages').animate({ scrollTop: $('.main__messages')[0].scrollHeight});
       $('.send').prop('disabled', false);
+      $('.new_message')[0].reset();
     })
     .fail(function(data) {
       alert('error');
