@@ -3,7 +3,8 @@
   .main__group.clearfix
     .main__group--name
       = @group.name
-    %button.main__group--edit Edit
+    = link_to edit_group_path(@group) do
+      %button.main__group--edit Edit
     .main__group--member
       MEMBERS:
       - @group.users.each do |user|
