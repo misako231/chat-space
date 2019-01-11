@@ -13,9 +13,9 @@
   .main__footer
     .main__footer-form
       .main__footer-body
-        = form_for [@group, @message] do |f|
-          = f.text_field :content, class: 'message',placeholder: 'type a message'
+        = form_for [@group, @message], html: { class: 'new_message' } do |f|
+          = f.text_field :content, class: 'message-box',placeholder: 'type a message'
           = f.label :image, class: 'upload-label' do
             = fa_icon 'image', class: 'fa'
             = f.file_field :image, class: 'upload-icon'
-          = f.submit 'Send', class: 'submit'
+          = f.submit 'Send', class: 'send'
