@@ -35,7 +35,7 @@ $(function() {
       dataType: 'json'
     })
     .done(function(messages) {
-     var id = $('.message').data('message-id');
+     var id = $('.message:last').data('message-id');
       messages.forEach(function(message) {
         if (message.id > id) {
           $('.main__messages').append(buildHTML(message));
