@@ -29,17 +29,18 @@ $(function() {
   }
 
   function update() {
+    var message_id = $('.message:last').data('message-id');
     $.ajax({
       type: 'GET',
       url: location.href,
+      data: {
+        message: { id: message_id }
+      },
       dataType: 'json'
     })
     .done(function(messages) {
-     var id = $('.message:last').data('message-id');
       messages.forEach(function(message) {
-        if (message.id > id) {
-          $('.main__messages').append(buildHTML(message));
-        }
+        $('.main__messages').append(buildHTML(message));
       });
     })
     .fail(function(data) {
