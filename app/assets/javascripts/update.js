@@ -48,7 +48,9 @@ $(function() {
     });
   }
 
-  $(function() {
-    setInterval(update, 5000);
-  });
+  if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+    $(function() {
+      setInterval(update, 5000);
+    });
+  };
 });
