@@ -1,8 +1,8 @@
-require 'carriewave/storage/abstract'
-require 'carriewave/storage/file'
-require 'carriewave/storage/fog'
+require 'carrierwave/storage/abstract'
+require 'carrierwave/storage/file'
+require 'carrierwave/storage/fog'
 
-CarrieWave.configure do |config|
+CarrierWave.configure do |config|
   config.strage = :fog
   config.fog_provider = 'fog/aws'
   config.fog_credentials = {
