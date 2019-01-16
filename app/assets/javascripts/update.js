@@ -28,29 +28,28 @@ $(function() {
     return html
   }
 
-  function update() {
-    var message_id = $('.message:last').data('message-id');
-    $.ajax({
-      type: 'GET',
-      url: location.href,
-      data: {
-        message: { id: message_id }
-      },
-      dataType: 'json'
-    })
-    .done(function(messages) {
-      messages.forEach(function(message) {
-        $('.main__messages').append(buildHTML(message));
+  var update = setInterval(function() {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+      var message_id = $('.message:last').data('message-id');
+      $.ajax({
+        type: 'GET',
+        url: location.href,
+        data: {
+          message: { id: message_id }
+        },
+        dataType: 'json'
+      })
+      .done(function(messages) {
+        messages.forEach(function(message) {
+          $('.main__messages').append(buildHTML(message));
+        });
+      })
+      .fail(function(data) {
+        alert('自動更新に失敗しました');
       });
-    })
-    .fail(function(data) {
-      alert('自動更新に失敗しました');
-    });
-  }
-
-  if (window.location.href.match(/\/groups\/\d+\/messages/)) {
-    $(function() {
-      setInterval(update, 5000);
-    });
-  };
+    } else {
+      clearInterval(update);
+    };
+  }, 5000);
 });
+
