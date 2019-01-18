@@ -23,41 +23,48 @@ $(function() {
     return html;
   }
 
-  $('#user-search-field').on('keyup', function() {
-    var input = $('#user-search-field').val();
+  $(document).on('turbolinks:load', function() {
+    $('#user-search-field').on('keyup', function() {
+      var input = $('#user-search-field').val();
 
-    $.ajax({
-      type: 'GET',
-      url: '/users',
-      data: { keyword: input },
-      dataType: 'json'
-    })
+      $.ajax({
+        type: 'GET',
+        url: '/users',
+        data: { keyword: input },
+        dataType: 'json'
+      })
 
-    .done(function(users) {
+      .done(function(users) {
+        $('#user-search-result').empty();
+        if(users.length !== 0) {
+          users.forEach(function(user) {
+            appendUser(user);
+          });
+        } else {
+          appendNoUser('一致するユーザーはいません');
+        }
+      })
+      .fail(function(users) {
+        alert('ユーザー検索に失敗しました');
+      })
+    });
+
+
+    $('#user-search-result').on('click', '.user-search-add',function() {
+      var userId = $(this).data('user-id');
+      var userName = $(this).data('user-name');
+      var html = userAdd(userId, userName);
+      $('#chat-group-users').append(html);
       $('#user-search-result').empty();
-      if(users.length !== 0) {
-        users.forEach(function(user) {
-          appendUser(user);
-        });
-      } else {
-        appendNoUser('一致するユーザーはいません');
-      }
-    })
-    .fail(function(users) {
-      alert('ユーザー検索に失敗しました');
-    })
-  });
+      $('#user-search-field').val('');
+    });
 
-  $('#user-search-result').on('click', '.user-search-add',function() {
-    var userId = $(this).data('user-id');
-    var userName = $(this).data('user-name');
-    var html = userAdd(userId, userName);
-    $('#chat-group-users').append(html);
-    $('#user-search-result').empty();
-    $('#user-search-field').val('');
-  });
+    $('#chat-group-users').on('click', '.user-search-remove', function() {
+      $(this).parent().remove();
+    });
 
-  $('#chat-group-users').on('click', '.user-search-remove', function() {
-    $(this).parent().remove();
+    $('.user-search-remove').on('click', function() {
+      $(this).parent().remove();
+    });
   });
 });
