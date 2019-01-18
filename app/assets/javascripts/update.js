@@ -21,8 +21,8 @@ $(function() {
                   </div>
                 </div>
                 <div class="lower-message">
-                    ${sendImage}
                     ${sendContent}
+                    ${sendImage}
                 </div>
               </div>`
     return html
