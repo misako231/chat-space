@@ -39,6 +39,8 @@ html, body {
       color: $black;
       overflow: scroll;
     .message {
+        margin-bottom: 40px;
+    }
       .upper-message {
           display: flex;
           padding-bottom: 10px;
@@ -55,10 +57,8 @@ html, body {
       .lower-message {
         &__content {
           font-size: 14px;
-          margin-bottom: 40px;
         }
       }
-    }
   }
   &__footer {
       box-sizing: border-box;
