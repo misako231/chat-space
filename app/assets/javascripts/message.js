@@ -2,7 +2,7 @@ $(function() {
   function buildHTML(message) {
     var newContent = '';
       if (message.content) {
-       newContent = `<p class="lower-message__content">${ message.content }</p>`;
+        newContent = `<p class="lower-message__content">${ message.content }</p>`;
       }
     var newImage = '';
       if (message.image) {
